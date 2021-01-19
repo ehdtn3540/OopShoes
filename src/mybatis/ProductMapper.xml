@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.ProductMapper">
+	<!-- 전체검색 -->
+	<select id="getProductList" resultType="ProductDTO">
+		<![CDATA[
+	         SELECT * FROM PRODUCT ORDER BY PID DESC
+     	]]>
+	</select>
+	<!-- 제품추가 -->
+ 	<insert id="productInsert" parameterType="ProductDTO">
+		<![CDATA[
+			INSERT INTO PRODUCT(pID, pNAME, pBRAND, pPRICE, pSTOCK, pIMAGE1, pIMAGE2, pIMAGE3, pDETAIL, pRDATE) 
+			VALUES (seq_pid.nextval, #{pname}, #{pbrand}, #{pprice}, #{pstock}, #{pimage1}, #{pimage2}, #{pimage3}, #{pdetail}, SYSDATE)
+		]]>
+	</insert>
+	<!-- 제품수정 -->
+	<update id="productUpdate" parameterType="ProductDTO">
+		<![CDATA[
+			UPDATE PRODUCT 
+			SET pID=#{pid}, pNAME=#{pname}, pBRAND=#{pbrand}, pPRICE=#{pprice}, pDISCOUNT=#{pdiscount}, pSTOCK=#{pstock}, pIMAGE1=#{pimage1}, pIMAGE2=#{pimage2}, pIMAGE3=#{pimage3}, pDETAIL=#{pdetail}, pSELL=#{psell}
+			WHERE pID=#{pid}
+		]]>
+	</update>
+	<!-- 제품삭제 -->
+	<delete id="productDelete" parameterType="java.lang.Integer">
+	    <![CDATA[
+	         DELETE PRODUCT WHERE pID=#{id}
+	    ]]>
+    </delete>
+    <!-- 제품정렬 -->
+    <select id="getProductSort" resultType="ProductDTO">
+		<![CDATA[
+	         SELECT * FROM PRODUCT 
+	         WHERE pBRAND=#{pbrand}
+	         ORDER BY PID DESC
+     	]]>
+	</select>
+	
+	<!-- 상품페이지 출력  ============================================-->
+	<!-- 메뉴별 상품페이지 -->
+	<select id="getBrandsList" resultType="ProductDTO" parameterType="java.lang.String">
+		<![CDATA[
+	         SELECT * FROM PRODUCT WHERE PBRAND = #{pg}
+     	]]>
+	</select>
+	<!-- 신상품페이지 -->
+	<select id="getNewList" resultType="ProductDTO" parameterType="java.lang.String">
+		<![CDATA[
+	        select tt.*, rownum 
+	        from (SELECT * FROM PRODUCT order by prdate DESC) tt
+	        where rownum<=12
+     	]]>
+	</select>
+	<!-- 베스트상품페이지 -->
+	<select id="getBestList" resultType="ProductDTO" parameterType="java.lang.String">
+		<![CDATA[
+	         SELECT * FROM PRODUCT WHERE ROWNUM <= 12 ORDER BY pSELL DESC
+     	]]>
+	</select>
+	<!-- 이벤트(할인)상품페이지 -->
+	<select id="getEventList" resultType="ProductDTO" parameterType="java.lang.String">
+		<![CDATA[
+	         SELECT * FROM PRODUCT WHERE pDISCOUNT > 0
+     	]]>
+	</select>
+	<!-- //상품페이지 출력  ============================================-->
+	
+	<!-- 상세 페이지 -->
+	<select id="getProductDetail" parameterType="java.lang.Integer" resultType="ProductDTO">
+		<![CDATA[
+			SELECT * FROM PRODUCT WHERE pID=#{pg}
+		]]>
+	</select>
+	<!-- 제품검색 -->
+	<select id="getProductSearchList" parameterType="hashmap" resultType="ProductDTO">
+		<![CDATA[
+			SELECT * FROM PRODUCT WHERE pNAME LIKE #{pname}
+		]]>
+	</select>
+	
+</mapper>

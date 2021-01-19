@@ -1,0 +1,285 @@
+@charset "EUC-KR";
+
+/* ∞·¡¶√¢ */
+.order-wrap {
+	width : 570px;
+	margin: auto;
+}
+
+.contents-title {
+	text-align: center;
+	margin-top: 150px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 30px;
+}
+
+.title {
+	margin-top: 150px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 50px;
+	font-size: 20px;
+	text-align: center;
+}
+
+.title-price {
+	color: #fb5302;
+	margin: 20px auto 0;
+	padding: 0 10px;
+	font-weight: normal;
+	font-size: 14px;
+	letter-spacing: -0.3px;
+}
+
+.order-check {
+	border: 1px solid #E5E5E5;
+}
+
+.tit {
+	text-align: left;
+	display: block;
+	background-color: #E5E5E5;
+	font-weight: bold;
+	padding: 20px;
+	font-size: 16px;
+	color: black;
+}
+
+.order-list {
+	display: block;
+	padding: 20px;
+	text-align: left;
+}
+
+.image-wrap {
+	display: inline-block;
+}
+
+#pimage {
+	display: inline-block;
+	width: 110px;
+	height: 110px;
+}
+
+.info-wrap {
+	display: inline-block;
+}
+
+.pName {
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+
+.retail-price {
+	color: #FA5402;
+	font-weight: normal;
+	font-size: 14px;
+}
+
+.info-price-container {
+	border-top: 1px solid #E5E5E5;
+	padding: 20px;
+	text-align: justify;
+}
+
+.info-price {
+	display: block;
+}
+
+.item-price {
+	display: block;
+	margin-bottom: 20px;
+}
+
+.label {
+	display: inline;
+	text-align: left;
+	color: black;
+}
+
+.price {
+	display: inline;
+	float: right;
+	color: black;
+}
+
+.total-price {
+	display: block;
+}
+
+.total-price * {
+	font-size: 20px;
+	font-style: bold;
+	color :black;
+}
+.price-sale-total {
+	float: right;
+}
+
+#li_info{
+	margin-top: 10px;
+	display: block;
+	padding-left: 10px;
+	font-size: 12px;
+	color: #999;
+}
+
+.scroll-box {
+	overflow-y: scroll;
+	height: 110px;
+	padding: 15px 8px;
+	border: 1px solid #d1d1d1;
+	font-size: 14px;
+	width: auto;
+}
+
+.customer-container {
+	margin: 12px;
+}
+
+.customer-wrap {
+	margin-bottom: 30px;
+	text-align: left;
+}
+
+.customer-title {
+	margin-top: 30px;
+	color: #111111;
+	display: block;
+	font-weight: bold;
+	font-size: 16px;
+	vertical-align: middle;
+}
+
+.name-con {
+	display: block;
+}
+
+.name-tit {
+	margin-top: 15px;
+	margin-bottom: 7px;
+	font-size: 14px;
+	display: block;
+}
+
+.input_info {
+	padding-left: 5px;
+	height: 50px;
+	width: 100%;
+	border: 1px solid #bebebe;
+    font-style: 14px;
+    padding-left: 15px;
+}
+
+.phone-tit {
+	margin-top: 15px;
+	margin-bottom: 7px;
+	font-size: 14px;
+	display: block;
+}
+
+.agr-tit {
+	margin-top: 30px;
+	margin-bottom: 10px;
+	color: #111111;
+	display: block;
+	font-weight: bold;
+	font-size: 16px;
+	vertical-align: middle;
+}
+
+.shipping-title {
+	margin-top: 30px;
+	margin-bottom: 10px;
+	color: #111111;
+	display: block;
+	font-weight: bold;
+	font-size: 16px;
+	vertical-align: middle;
+}
+.shipping-tit {
+	margin-top: 15px;
+	margin-bottom: 7px;
+	font-size: 14px;
+	display: block;
+}
+#post-wrap {
+	display: block;
+	background-color: green;
+	margin-bottom: 40px;
+}
+
+#temp-wrap {
+	width:562px;
+	margin: 0;
+  	padding: 0;
+/*  	background-color: red;  */
+	display: block;
+}
+
+#opost {
+	display:inline-block;
+	width:71%	
+}
+
+#btn_post {
+	display : inline-block;
+	width: 25%;
+	height: 47px;
+	color : black;
+	background-color : white;
+	border: solid 2px grey;
+  	border-radius: 8px;
+  	text-align: center;
+  	padding :0px;
+  	float: right;
+  	vertical-align: middle;
+}
+.sel_pay {
+	width: 563px;
+	height: 50px;
+	box-sizing: border-box;
+	background: #ffffff;
+	border: 1px solid #d1d1d1;
+	font-size: 14px;
+	outline: none;
+	color: #383838;
+	font-style: bold;
+	padding-left: 15px;
+}
+
+.payment-title {
+	margin-top: 30px;
+	margin-bottom: 10px;
+	color: #111111;
+	display: block;
+	font-weight: bold;
+	font-size: 16px;
+	vertical-align: middle;
+}
+
+.payment-method-tit {
+	box-sizing: border-box;
+	padding: 17px 25px 16px;
+	border: 1px solid #d1d1d1;
+	font-size: 16px;
+	cursor: pointer;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.checklist {
+	font-size: 12px;
+	display: block;
+	margin-top: 10px;
+}
+
+#btn-atlast {
+	height: 50px;
+	font-size: 15px;
+	padding: 16px 50px;
+	width: 100%;
+	background-color: black;
+	color: white;
+}

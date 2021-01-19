@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.MemberMapper">
+	<select id="getMemberList" resultType="MemberDTO">
+		<![CDATA[
+	        SELECT * FROM MEMBER
+     	]]>
+	</select>
+	<update id="memberModify" parameterType="MemberDTO">
+		<![CDATA[
+			UPDATE MEMBER 
+			SET mPW=#{mpw}, mNAME=#{mname}, mADDRESS=#{maddress}, mPOST=#{mpost}, mDROP=#{mdrop}, mADMIN=#{madmin}, mPHONE=#{mphone}
+			WHERE mID=#{mid}
+		]]>
+	</update>
+	<update id="memberDrop" parameterType="java.lang.String">
+		<![CDATA[
+			UPDATE MEMBER 
+			SET mDROP=1
+			WHERE mID=#{id}
+		]]>
+	</update>		
+</mapper>

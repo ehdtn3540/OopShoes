@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.CartMapper">
+ 	<insert id="cartInsert" parameterType="CartDTO">
+		<![CDATA[
+			INSERT INTO CART(cID, mID, pID, pIMAGE1, pName, pPRICE, odSIZE, odQTY, pDISCOUNT) 
+			VALUES (seq_cart.nextval, #{mid}, #{pid}, #{pimage1}, #{pname}, #{pprice}, #{odsize}, #{odqty}, #{pdiscount})
+		]]>
+	</insert>
+	<select id="getCartList" parameterType="hashmap" resultType="CartDTO">
+		<![CDATA[
+	         SELECT * FROM CART
+	         WHERE mID LIKE #{mid}
+     	]]>
+	</select>
+	<delete id="cartDeleteAll" parameterType="java.lang.String">
+	    <![CDATA[
+	         DELETE CART WHERE mID LIKE #{id}
+	    ]]>
+    </delete>
+    <delete id="cartDeleteEach" parameterType="java.lang.Integer">
+	    <![CDATA[
+	         DELETE CART WHERE cID=#{id}
+	    ]]>
+    </delete>
+</mapper>
